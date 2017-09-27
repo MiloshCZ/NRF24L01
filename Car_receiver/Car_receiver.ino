@@ -1,28 +1,9 @@
-/*
-TMRh20 2014
-
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License
- version 2 as published by the Free Software Foundation.
- */
-
-/** General Data Transfer Rate Test
- * This example demonstrates basic data transfer functionality with the 
- updated library. This example will display the transfer rates acheived using
- the slower form of high-speed transfer using blocking-writes.
- */
-
-
 #include <SPI.h>
-#include <printf.h>
+//#include <printf.h>
 #include "RF24.h"
 #include "LowPower.h"
 
-/*************  USER Configuration *****************************/
-                                          // Hardware configuration
-RF24 radio(8,10);                        // Set up nRF24L01 radio on SPI bus plus pins 7 & 8
-
-/***************************************************************/
+RF24 radio(8,10);                        // Set up nRF24L01 radio on SPI bus plus pins
 
 #define MOT1A    3
 #define MOT1B    5
@@ -56,13 +37,13 @@ void setup(void) {
   digitalWrite(FrontLED, HIGH);
 
   Serial.begin(115200);
-  printf_begin();
+//  printf_begin();
 
   radio.begin();                           // Setup and configure rf radio
   radio.openReadingPipe(1,pipe);
   radio.setPALevel(RF24_PA_LOW);
   radio.startListening();
-  radio.printDetails();                   // Dump the configuration of the rf unit for debugging
+//  radio.printDetails();                   // Dump the configuration of the rf unit for debugging
   
   Serial.println(F("\n\rRF24/examples/Receive/"));
   Serial.println("Waiting for data");

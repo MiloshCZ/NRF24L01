@@ -1,28 +1,9 @@
-/*
-TMRh20 2014
-
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License
- version 2 as published by the Free Software Foundation.
- */
-
-/** General Data Transfer Rate Test
- * This example demonstrates basic data transfer functionality with the 
- updated library. This example will display the transfer rates acheived using
- the slower form of high-speed transfer using blocking-writes.
- */
-
-
 #include <SPI.h>,
 //#include <printf.h>
 #include "RF24.h"
 #include "LowPower.h"
 
-/*************  USER Configuration *****************************/
-                                          // Hardware configuration
-RF24 radio(9,10);                        // Set up nRF24L01 radio on SPI bus plus pins 7 & 8
-
-/***************************************************************/
+RF24 radio(9,10);                        // Set up nRF24L01 radio on SPI bus plus pins
 
 const uint64_t pipe = 0xE8E8F0F0E1LL;
 
